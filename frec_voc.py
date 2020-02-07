@@ -4,6 +4,7 @@
     v 0.0.1 '''
 
 import sys
+import csv
 
 dictonary = {}
 filename = sys.argv[1]
@@ -23,10 +24,13 @@ for line in lines:
 
 filediscr.close()
 
-with open("vicab.txt", "w") as voc:
+with open("vicab.txt", "w") as voc, open("vocab.csv", "w") as csvvoc:
+    writer = csv.writer(csvvoc)
     for k,v in dictonary.items():
         outstr = f"{k:16}{v}\n"
         voc.write(outstr)
+        writer.writerow([k,v])
+
 
 #print(dictonary)
 #print(sorted(dictonary))
