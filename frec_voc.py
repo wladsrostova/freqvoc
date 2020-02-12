@@ -6,8 +6,10 @@
 import sys
 import csv
 
-dictonary = {}
 filename = sys.argv[1]
+csvpath = filename[:-3] + "csv"
+vocpath = filename[:-4] + "_voc" + filename[-4:]
+dictonary = {}
 filediscr = open(filename, 'r')
 
 lines = filediscr.readlines()
@@ -24,7 +26,7 @@ for line in lines:
 
 filediscr.close()
 
-with open("vicab.txt", "w") as voc, open("vocab.csv", "w") as csvvoc:
+with open(vocpath, "w") as voc, open(csvpath, "w") as csvvoc:
     writer = csv.writer(csvvoc)
     for k,v in dictonary.items():
         outstr = f"{k:16}{v}\n"
