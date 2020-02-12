@@ -5,6 +5,7 @@
 
 import sys
 import csv
+import re
 
 filename = sys.argv[1]
 csvpath = filename[:-3] + "csv"
@@ -13,12 +14,11 @@ dictonary = {}
 filediscr = open(filename, 'r')
 
 lines = filediscr.readlines()
+
 for line in lines:
-    line = line.strip()
-    words = line.split()
-    for word in words:
-        word = word.lower()
-        word = word.strip(')(;:"-,.!?')
+    r = re.findall('''(\w+(['-]+\w+)*'?)''', line)
+    for rword in r:
+        word = rword[0].lower()
         if word in dictonary.keys():
             dictonary[word] += 1
         else:
