@@ -33,7 +33,7 @@ filediscr.close()
 with open(vocpath, "w") as voc, open(csvpath, "w") as csvvoc:
     writer = csv.writer(csvvoc)
     for k,v in dictonary.items():
-        outstr = f"{k:16}{v}\n"
+        outstr = f"{k}\t{v}\n"
         voc.write(outstr)
         writer.writerow([k,v])
 
