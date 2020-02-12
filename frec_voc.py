@@ -1,7 +1,8 @@
 #! /usr/bin/env python3
+''' This program make frequent vocabulari from txt file 
 
-''' Frequency vocabulary for a text file
-    v 0.0.1 '''
+It returns  two formats: tsv with extention "txt" & csv.
+Input parameter - txt file, output: tsv - filename with suffix "_voc", csv - filename + extension "csv"'''
 
 import sys
 import csv
