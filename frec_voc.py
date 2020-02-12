@@ -19,6 +19,10 @@ for line in lines:
     r = re.findall('''(\w+(['-]+\w+)*'?)''', line)
     for rword in r:
         word = rword[0].lower()
+
+        if word.isdigit():
+            continue
+
         if word in dictonary.keys():
             dictonary[word] += 1
         else:
