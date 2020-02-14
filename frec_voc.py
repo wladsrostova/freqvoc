@@ -38,7 +38,3 @@ with open(vocpath, "w") as voc, open(csvpath, "w") as csvvoc:
         voc.write(outstr)
         writer.writerow([k,v])
 
-
-#print(dictonary)
-#print(sorted(dictonary))
-#print([(i,dictonary[i]) for i in sorted(dictonary.keys(),key=dictonary.get)])
