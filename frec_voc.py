@@ -38,3 +38,4 @@ with open(vocpath, "w") as voc, open(csvpath, "w") as csvvoc:
         voc.write(outstr)
         writer.writerow([k,v])
 
+print("Done")
